@@ -11,9 +11,9 @@ require 'active_record'
 require 'sqlite3'
 include ActionView::Helpers::DateHelper
 
-ActiveRecord::Base.establish_connection(
+include ActiveRecord::Base.establish_connection(
   adapter:  'sqlite3',
-  database: 'development.sqlite3',
+  database: 'development',
   host:     'localhost'
 )
 
@@ -244,3 +244,6 @@ command :fetch do |c|
 	    puts User.first.email
 	end
 end
+
+
+
