@@ -13,13 +13,12 @@ include ActionView::Helpers::DateHelper
 
 ActiveRecord::Base.establish_connection(
   adapter:  'sqlite3',
-  database: 'development',
+  database: 'development.sqlite3',
   host:     'localhost'
 )
 
 class User < ActiveRecord::Base
 end
-
 
 KEYCHAIN_SERVICE = 'github_bus_factor'
 API_CALL_RETRY_COUNT = 3
