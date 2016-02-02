@@ -7,11 +7,7 @@ require 'terminal-table'
 require 'faraday-http-cache'
 require 'action_view'
 require 'active_support/core_ext/numeric/time'
-require 'active_record'
-require 'sqlite3'
 include ActionView::Helpers::DateHelper
-
-db = SQLite3::Database.open 'development.sqlite3'
 
 
 KEYCHAIN_SERVICE = 'github_bus_factor'
@@ -235,13 +231,9 @@ command :fetch do |c|
 	    	t.rows = output.each_with_index
 	    end
 	    puts table
-	    
-	    db.execute 'SELECT * FROM users' do |row|
-  			p row
-		end
-
 	end
 end
+
 
 
 
