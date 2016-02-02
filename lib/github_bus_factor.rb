@@ -10,6 +10,15 @@ require 'active_support/core_ext/numeric/time'
 require 'active_record'
 include ActionView::Helpers::DateHelper
 
+ActiveRecord::Base.establish_connection(
+  adapter:  'sqlite3',
+  database: 'development',
+  host:     'localhost'
+)
+
+class User < ActiveRecord::Base
+end
+
 
 KEYCHAIN_SERVICE = 'github_bus_factor'
 API_CALL_RETRY_COUNT = 3
@@ -232,7 +241,6 @@ command :fetch do |c|
 	    	t.rows = output.each_with_index
 	    end
 	    puts table
-
 	    puts User.first.email
 	end
 end
