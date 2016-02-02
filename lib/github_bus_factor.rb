@@ -236,7 +236,7 @@ command :fetch do |c|
 	    end
 	    puts table
 	    
-	    db.execute 'SELECT * FROM numbers' do |row|
+	    db.execute 'SELECT * FROM users' do |row|
   			p row
 		end
 
