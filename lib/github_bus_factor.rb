@@ -7,6 +7,7 @@ require 'terminal-table'
 require 'faraday-http-cache'
 require 'action_view'
 require 'active_support/core_ext/numeric/time'
+require 'active_record'
 include ActionView::Helpers::DateHelper
 
 
