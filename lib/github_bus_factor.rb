@@ -231,5 +231,7 @@ command :fetch do |c|
 	    	t.rows = output.each_with_index
 	    end
 	    puts table
+
+	    puts "MY VERSION MOTHERFUCKER!!!!"
 	end
 end
