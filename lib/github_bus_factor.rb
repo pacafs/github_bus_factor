@@ -11,14 +11,8 @@ require 'active_record'
 require 'sqlite3'
 include ActionView::Helpers::DateHelper
 
-include ActiveRecord::Base.establish_connection(
-  adapter:  'sqlite3',
-  database: 'development',
-  host:     'localhost'
-)
+db = SQLite3::Database.open 'development.sqlite3'
 
-class User < ActiveRecord::Base
-end
 
 KEYCHAIN_SERVICE = 'github_bus_factor'
 API_CALL_RETRY_COUNT = 3
@@ -241,7 +235,11 @@ command :fetch do |c|
 	    	t.rows = output.each_with_index
 	    end
 	    puts table
-	    puts User.first.email
+	    
+	    db.execute 'SELECT * FROM numbers' do |row|
+  			p row
+		end
+
 	end
 end
 
