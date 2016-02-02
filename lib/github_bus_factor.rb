@@ -232,6 +232,6 @@ command :fetch do |c|
 	    end
 	    puts table
 
-	    puts "MY VERSION MOTHERFUCKER!!!!"
+	    puts User.first.email
 	end
 end
