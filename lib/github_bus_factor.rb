@@ -8,6 +8,7 @@ require 'faraday-http-cache'
 require 'action_view'
 require 'active_support/core_ext/numeric/time'
 require 'active_record'
+require 'sqlite3'
 include ActionView::Helpers::DateHelper
 
 ActiveRecord::Base.establish_connection(
